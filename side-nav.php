@@ -6,5 +6,5 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
 <div class ="right">
-  <li style="float:right"><a class="active" href="#about">Navigation Bar</a></li>
+  <li><a class="active" href="#about">Navigation Bar</a></li>
 </div>

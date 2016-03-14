@@ -1,5 +1,4 @@
 <?php include 'header.php'?>
-<?php include 'side-nav.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +32,7 @@ urMap {
 	<div class="mapResize">
 		<div class="well">
 			<img src="Maps/urMap.png" class="img-responsive" alt="urMap">
+			<?php include'side-nav.php'?>
 		</div>
 	</div>
 </body>
