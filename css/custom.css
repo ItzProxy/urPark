@@ -1,14 +1,22 @@
-.mapResize{
+section#map{
+  width: 80%;
   float: left;
-  width: 100em;
-  height: 20em;
+  margin: 0;
+  padding: 0;
+  display: inline;     
 }
 .right {
     float: right;
     right: 0px;
-    width: 300px;
+    width: 20%;
     border: 3px solid #73AD21;
     padding: 10px;
+    display: inline;
+  margin: 0;
+  padding: 0;
+}
+urMap {
+    width: 80%;
 }
 .overlayMap{
   position: absolute;
@@ -20,4 +28,8 @@
   padding: 3em;
   box-sizing: border-box;
   opacity: 0.6;
+}
+nav{    
+  width: 150px;
+  float: left;
 }

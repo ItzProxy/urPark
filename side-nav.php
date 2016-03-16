@@ -5,6 +5,6 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
-<div class ="right">
+<nav role="nav" class ="right">
   <li><a class="active" href="#about">Navigation Bar</a></li>
-</div>
+</nav>
