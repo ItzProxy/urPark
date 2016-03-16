@@ -1,0 +1,2 @@
+Map size changes with the window size, so dynamic sizing. -MARCH 16 2016
+(getWindowSize)x100% = the window size of the map

@@ -8,7 +8,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:2em; bottom:1em; width:80%; }
+        #map { position:absolute; height:auto; top:2em; bottom:1em; width:80.55%; }
     </style>
 </head>
 <body>
@@ -17,8 +17,8 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaXR6cHJveHkiLCJhIjoiY2lsdjhpcDRiMDFoOHVia3NxMXJjejg0NyJ9.BylAtBOCzmlgaLrUk9RarA';
 var bounds = [
-    [-104.5958089828491,50.41256521019116], // Southwest coordinates
-    [-104.57950115203857, 50.42000328702555]  // Northeast coordinates   
+    [-104.59709644317627,50.41278399382671], // Southwest coordinates
+    [-104.57623958587646, 50.42041344110785]  // Northeast coordinates   
   ]
 var map = new mapboxgl.Map({
     container: 'map', // container id
