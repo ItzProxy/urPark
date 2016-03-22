@@ -5,12 +5,12 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
 <nav role="nav" class ="right">
-  <li><a class="active" href="#nav">Navigation Bar</a></li>
+  <a class="active" href="#nav">Navigation Bar</a>
 	<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
 
 </nav>

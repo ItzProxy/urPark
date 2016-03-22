@@ -4,8 +4,7 @@
 
 .right {
   float: right;
-  right: 0px;
-  width: 20%;
+  width: 19.45%;
   border: 3px solid #73AD21;
   padding: 10px;
   display: inline;
@@ -27,15 +26,15 @@
 }
 
 nav {
-  width: 150px;
-  float: left;
+  width: 19.45%;
+  float: right;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 100%;
   background-color: #f1f1f1;
   border: 1px solid #555;
 }
