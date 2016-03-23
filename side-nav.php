@@ -13,5 +13,5 @@
         <li><a href="#about">About</a></li>
         <li><button id="draw">Click Me to draw</button></li>
     </ul>
-
+    <div id="print"></div>
 </nav>
