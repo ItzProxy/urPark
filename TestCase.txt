@@ -4,3 +4,8 @@ TEST CASE: <Insert Title Function>
 STEPS TO REPRODUCE: <Procesdure>
 RESULTS: <Working as intended/Failed to worked/Working but with some difficulty>
 ADDED NOTES: <Add any notes if there is difficulty in getting function to work or any other problem pertaining to the test case>
+
+TEST CASE: Add row in main map
+STEP TO REPRODUDE: Use markers to set up 2 points and use the button associated with drawing a line
+RESULTS: Working as intended
+ADDED NOTES: This will be part of the admin panel, and the data gathered will be streamed onto.
