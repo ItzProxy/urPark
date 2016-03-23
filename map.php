@@ -14,6 +14,7 @@
 <body>
 
 <div id='map'></div>
+<div id='length'></div>
 <pre id='coordinates' class='ui-coordinates'></pre>
 <!--<script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaXR6cHJveHkiLCJhIjoiY2lsdjhpcDRiMDFoOHVia3NxMXJjejg0NyJ9.BylAtBOCzmlgaLrUk9RarA';
@@ -31,5 +32,6 @@ var map = new mapboxgl.Map({
 </script> -->
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/getCoord.js"></script>
+<script type="text/javascript" src="js/createLine.js"></script>
 </body>
 </html>
