@@ -1,0 +1,6 @@
+FORMAT:
+
+TEST CASE: <Insert Title Function>
+STEPS TO REPRODUCE: <Procesdure>
+RESULTS: <Working as intended/Failed to worked/Working but with some difficulty>
+ADDED NOTES: <Add any notes if there is difficulty in getting function to work or any other problem pertaining to the test case>
