@@ -12,6 +12,7 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
         <li><button id="draw">Click Me to draw</button></li>
+   <li><button id="colorOfLine"></button></li>
     </ul>
     <div id="print"></div>
 </nav>
