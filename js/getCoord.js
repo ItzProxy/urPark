@@ -1,14 +1,13 @@
 var coordinates = document.getElementById('coordinates');
-var lengthDiv = document.getElementById('length');
 
-var marker = L.marker([50.42041344110785,-104.57623958587646], {
+var marker = L.marker([50.41454789997864,-104.59364175796509], {
     icon: L.mapbox.marker.icon({
       'marker-color': '#f86767'
     }),
     draggable: true
 }).addTo(map);
 
-var lenMarker = L.marker([50.42041344110785,-104.57623958587646], {
+var lenMarker = L.marker([50.41454789997864,-104.59364175796509], {
     icon: L.mapbox.marker.icon({
       'marker-color': '#f86767'
     }),

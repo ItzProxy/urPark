@@ -23,10 +23,11 @@ function draw_line(){
     var m = marker.getLatLng(),
         n = lenMarker.getLatLng();
     var line_draw = [m,n];
-    var polyline = L.polyline(line_draw, polyline_options).addTo(map);
+    L.polyline(line_draw, polyline_options).addTo(map);
     all_drawn_array.push(m,n);
     printAllInArray(line_draw);
 }
+
 //prints all coordinates to a 'print' div
 function printAllInArray(polylineArray){
 var printTo = document.getElementById('print');
