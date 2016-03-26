@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="50723561-43b6-4619-a54f-ab7ce365bbf2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/adminControl.js" afterPath="$PROJECT_DIR$/js/adminControl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/getCoord.js" afterPath="$PROJECT_DIR$/js/getCoord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map.php" afterPath="$PROJECT_DIR$/map.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/side-nav.php" afterPath="$PROJECT_DIR$/side-nav.php" />
     </list>
     <ignored path="urPark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,21 +78,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getCoord.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getCoord.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/getCoord.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminControl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminControl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/adminControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="425">
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
@@ -174,8 +170,8 @@
         <option value="$PROJECT_DIR$/map.php" />
         <option value="$PROJECT_DIR$/side-nav.php" />
         <option value="$PROJECT_DIR$/admin.php" />
-        <option value="$PROJECT_DIR$/js/getCoord.js" />
         <option value="$PROJECT_DIR$/js/adminControl.js" />
+        <option value="$PROJECT_DIR$/js/getCoord.js" />
       </list>
     </option>
   </component>
@@ -319,7 +315,7 @@
       <workItem from="1458682834097" duration="10089000" />
       <workItem from="1458744084348" duration="5503000" />
       <workItem from="1458934663749" duration="255000" />
-      <workItem from="1458935628566" duration="12791000" />
+      <workItem from="1458935628566" duration="13061000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin.php, with very few functions that were seen for the user view.">
       <created>1458943689646</created>
@@ -328,14 +324,21 @@
       <option name="project" value="LOCAL" />
       <updated>1458943689646</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added admin.php, with very few functions that were seen for the user view.">
+      <created>1458955047685</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1458955047685</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28638000" />
+    <option name="totallyTimeSpent" value="28908000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -790,21 +793,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/getCoord.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/adminControl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="425">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/getCoord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
