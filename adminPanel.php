@@ -10,7 +10,8 @@ class admin
 {
     private $adminToolbar = "<nav class='right'>";
     private $controller = "<button id=";
-
+    private $lenY = 0;
+    private $lenX = 0;
     public function showConstant(){
         echo $this -> adminToolbar;
     }
@@ -22,8 +23,12 @@ class admin
         echo $adminDrawLine;
         $adminSaveResults = $this->controller."saveCoords>"."Click To Save</button>".PHP_EOL;
         echo $adminSaveResults;
-        $adminLengthAdjust = "<input type='range' id='lengthOfMarker' value='50'>";
-        echo $adminLengthAdjust;
+        $adminYAdjust = "<input type='range' id='lenY' value='".$this->lenY."'>".PHP_EOL;
+        $adminXAdjust = "<input type='range' id='lenX' value='".$this->lenX."'>".PHP_EOL;
+        echo "<div class='range'>";
+        echo $adminXAdjust.PHP_EOL;
+        echo $adminYAdjust;
+        echo "</div>".PHP_EOL;
         echo '<div id="print"></div>';
         echo '</nav>';
     }

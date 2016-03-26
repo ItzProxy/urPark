@@ -13,7 +13,7 @@ var lenMarker = L.marker([50.41454789997864,-104.59364175796509], {
     icon: L.mapbox.marker.icon({
       'marker-color': '#f86767'
     }),
-    draggable: true
+    draggable: false
 }).addTo(map);
 
 // every time the marker is dragged, update the coordinates container
