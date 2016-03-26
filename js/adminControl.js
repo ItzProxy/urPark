@@ -20,9 +20,9 @@ function moveMark(e){
         alert("HELLO");
     }
     else if(checkArrow.match(/→/g)){
-        alert("HELLO");
+        currentLen = (-1) * Math.abs(currentLen);
     }
     else if(checkArrow.match(/↓/g)){
-
+        currentLen = (-1) * Math.abs(currentLen);
     }
 }
