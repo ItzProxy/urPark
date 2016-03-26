@@ -29,5 +29,6 @@ function ondragend() { //drag the function and debug the length between two mark
     coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />' +
                             'Longitude: ' + m.lng + '<br />' +
                             'LengthX:' + Math.abs(n.lng - m.lng) +
-                            '<br /> LengthY:' + Math.abs(n.lat - m.lat);
+        '<br />LengthY:' + Math.abs(n.lat - m.lat);
 }
+

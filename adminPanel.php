@@ -29,13 +29,32 @@ class admin
         echo $adminXAdjust.PHP_EOL;
         echo $adminYAdjust;
         echo "</div>".PHP_EOL;
+        $adminRemoveLines = $this->controller . 'clear>Clear Map of Drawn Lines</button>' . PHP_EOL;
+        echo $adminRemoveLines;
         echo '<div id="print"></div>';
         echo '</nav>';
+    }
+
+    public function getMapData()
+    { //get data
+        if (isset($_POST['action']) && !empty($_POST['action'])) {
+            $action = $_POST['action'];
+            switch ($action) {
+                case 'test' :
+                    test();
+                    break;
+                case 'blah' :
+                    blah();
+                    break;
+                // ...etc...
+            }
+        }
     }
 }
 
 $admin = new admin();
 $admin ->showConstant();
 $admin ->createPanel();
+$admin->getMapData();
 require_once ("adminheader.php");
 include ("map.php");

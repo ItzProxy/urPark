@@ -9,7 +9,6 @@
   padding: 10px;
   display: inline;
   margin: 0;
-  padding: 0;
 }
 
 .overlayMap {
@@ -67,7 +66,7 @@ li a:hover:not(.active) {
 pre.ui-coordinates {
   position:absolute;
   bottom:10px;
-  left:10px;
+  left: 59%;
   padding:5px 10px;
   background:rgba(0,0,0,0.5);
   color:#fff;
