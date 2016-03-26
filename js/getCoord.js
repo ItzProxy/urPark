@@ -11,7 +11,7 @@ var marker = L.marker([50.41454789997864,-104.59364175796509], {
 
 var lenMarker = L.marker([50.41454789997864,-104.59364175796509], {
     icon: L.mapbox.marker.icon({
-      'marker-color': '#f86767'
+      'marker-color': '#0066ff'
     }),
     draggable: false
 }).addTo(map);
@@ -26,5 +26,8 @@ function ondragend() { //drag the function and debug the length between two mark
     var m = marker.getLatLng(),
         n = lenMarker.getLatLng();
     lenMarker.setLatLng([m.lat + currentLen,m.lng + currentWid]);
-    coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />Longitude: ' + m.lng + '<br /> Length:' + Math.abs(n.lng - m.lng);
+    coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />' +
+                            'Longitude: ' + m.lng + '<br />' +
+                            'LengthX:' + Math.abs(n.lng - m.lng) +
+                            '<br /> LengthY:' + Math.abs(n.lat - m.lat);
 }

@@ -34,5 +34,5 @@ function changeLen(lenX,lenY){
     console.log(lenX/100+" "+lenY/100);
     currentLen = lenY/100*0.0034117698669433594;//some random value for length of parking lot row
     currentWid = lenX/100*0.0034117698669433594;//some random value for length of parking lot row
-    ondragend();
+    ondragend(); //update marker
 }

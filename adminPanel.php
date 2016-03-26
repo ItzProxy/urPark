@@ -23,8 +23,8 @@ class admin
         echo $adminDrawLine;
         $adminSaveResults = $this->controller."saveCoords>"."Click To Save</button>".PHP_EOL;
         echo $adminSaveResults;
-        $adminYAdjust = "<input type='range' id='lenY' value='".$this->lenY."'>".PHP_EOL;
-        $adminXAdjust = "<input type='range' id='lenX' value='".$this->lenX."'>".PHP_EOL;
+        $adminYAdjust = "LenY:<input type='range' id='lenY' value='".$this->lenY."'>".PHP_EOL;
+        $adminXAdjust = "LenX:<input type='range' id='lenX' value='".$this->lenX."'>".PHP_EOL;
         echo "<div class='range'>";
         echo $adminXAdjust.PHP_EOL;
         echo $adminYAdjust;
