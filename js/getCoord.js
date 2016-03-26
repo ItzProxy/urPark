@@ -16,7 +16,6 @@ var lenMarker = L.marker([50.41454789997864,-104.59364175796509], {
 
 // every time the marker is dragged, update the coordinates container
 marker.on('dragend', ondragend);
-marker.on('dragend', lengthFind);
 
 // Set the initial marker coordinate on load.
 ondragend();
@@ -24,6 +23,7 @@ ondragend();
 function ondragend() {
     var m = marker.getLatLng(),
         n = lenMarker.getLatLng();
+    lenMarker.setLatLng([m.lat,m.lng + 1]);
     coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />Longitude: ' + m.lng + '<br /> Length:' + Math.abs(n.lng - m.lng);
 }
 

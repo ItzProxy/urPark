@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50723561-43b6-4619-a54f-ab7ce365bbf2" name="Default" comment="Added admin.php, with very few functions that were seen for the user view.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminheader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/adminControl.js" />
+    <list default="true" id="50723561-43b6-4619-a54f-ab7ce365bbf2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/createLine.js" afterPath="$PROJECT_DIR$/js/createLine.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/adminControl.js" afterPath="$PROJECT_DIR$/js/adminControl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/getCoord.js" afterPath="$PROJECT_DIR$/js/getCoord.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map.php" afterPath="$PROJECT_DIR$/map.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/side-nav.php" afterPath="$PROJECT_DIR$/side-nav.php" />
     </list>
     <ignored path="urPark.iws" />
@@ -46,8 +45,8 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state relative-caret-position="76">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -56,8 +55,8 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="84" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
+            <state relative-caret-position="87">
+              <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -66,8 +65,8 @@
       <file leaf-file-name="side-nav.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/side-nav.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,7 +75,7 @@
       <file leaf-file-name="marker.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/marker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="181">
               <caret line="23" column="49" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="49" />
               <folding />
             </state>
@@ -86,18 +85,18 @@
       <file leaf-file-name="getCoord.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/getCoord.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminControl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminControl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/adminControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
@@ -118,8 +117,8 @@
       <file leaf-file-name="map.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="308">
+              <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -135,7 +134,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createLine.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createLine.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/createLine.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -167,16 +166,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/map.php" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/js/map.js" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/46112306-1f4b-4a7f-ac6d-084fa39aad71/console.sql" />
-        <option value="$PROJECT_DIR$/side-nav.php" />
         <option value="$PROJECT_DIR$/adminheader.php" />
+        <option value="$PROJECT_DIR$/js/createLine.js" />
+        <option value="$PROJECT_DIR$/map.php" />
+        <option value="$PROJECT_DIR$/side-nav.php" />
         <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/js/getCoord.js" />
         <option value="$PROJECT_DIR$/js/adminControl.js" />
-        <option value="$PROJECT_DIR$/js/createLine.js" />
       </list>
     </option>
   </component>
@@ -320,12 +319,20 @@
       <workItem from="1458682834097" duration="10089000" />
       <workItem from="1458744084348" duration="5503000" />
       <workItem from="1458934663749" duration="255000" />
-      <workItem from="1458935628566" duration="7654000" />
+      <workItem from="1458935628566" duration="12791000" />
     </task>
+    <task id="LOCAL-00001" summary="Added admin.php, with very few functions that were seen for the user view.">
+      <created>1458943689646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1458943689646</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23501000" />
+    <option name="totallyTimeSpent" value="28638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -701,22 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -741,37 +732,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/marker.js">
+    <entry file="file://$PROJECT_DIR$/js/createLine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="84" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/adminControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="100">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/getCoord.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,18 +750,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/side-nav.php">
+    <entry file="file://$PROJECT_DIR$/js/marker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="181">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/createLine.js">
+    <entry file="file://$PROJECT_DIR$/side-nav.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/getCoord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>

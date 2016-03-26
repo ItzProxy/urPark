@@ -8,8 +8,9 @@
  */
 class admin
 {
-    public $adminToolbar = "<nav class='right'>";
-    public $controller = "<button id=";
+    private $adminToolbar = "<nav class='right'>";
+    private $controller = "<button id=";
+
     public function showConstant(){
         echo $this -> adminToolbar;
     }
@@ -19,6 +20,10 @@ class admin
         }
         $adminDrawLine = $this->controller."draw>"."Click To Draw</button>".PHP_EOL;
         echo $adminDrawLine;
+        $adminSaveResults = $this->controller."saveCoords>"."Click To Save</button>".PHP_EOL;
+        echo $adminSaveResults;
+        $adminLengthAdjust = "<input type='range' id='lengthOfMarker' value='50'>";
+        echo $adminLengthAdjust;
         echo '<div id="print"></div>';
         echo '</nav>';
     }
