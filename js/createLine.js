@@ -8,12 +8,8 @@ var polyline_options = {
     color: '#000'
 };
 color_button.addEventListener('click', changeLineColor);//event listener
-function changeLineColor() { //Changing color of row lines
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
+function changeLineColor(rowStatistic) { //Changing color of row lines
+
     color_button.innerHTML = '' + color + '';
     polyline_options.color = color;
 }
@@ -49,10 +45,10 @@ function sendCoordData() {
 }
 
 function deleteCurrentMapCoordData() {
-    all_drawn_array = []; //empty
-    printAllInArray(all_drawn_array);
+    all_drawn_array = []; //empty the array to reset the displayed information
+    printAllInArray(all_drawn_array); //clear out the print div in adminPanel
 }
-
+//getters
 function getCurrentPolyLineObj() {
-    return polyline;
+    return polyline; //return the variable polyline
 }

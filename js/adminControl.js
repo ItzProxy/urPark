@@ -1,20 +1,18 @@
 /**
  * Created by Dionne on 3/25/2016.
  */
-var moveMarker = document.getElementsByClassName("arrow");
-var getLengthRange = document.getElementById("lengthOfMarker");
 /*
  Jquery event listeners
  In order:
  check if class
  */
-$(document).ready(function() {
+$(document).ready(function () {
     $('.arrow').click(moveMark); //orient the blue marker based on the red marker
     $('#draw').click(draw_line); //draw line in admin Panel: createLine.js
     $('#clear').click(clearDrawnLines); //clear drawn lines on map
     $('#saveCoords').click(saveData); //send data to server
 });
-$('.range').on("change mouseover", function () { //jquery eventlisteners for change on range
+$('.range').on("change mouseover", function () { //jquery event listeners for change on range
     var lenY = $("#lenY").val();
     var lenX = $("#lenX").val();
     changeLen(lenY, lenX);
@@ -23,20 +21,19 @@ $('.range').on("change mouseover", function () { //jquery eventlisteners for cha
  Function: Based on arrow clicked using regex, changes the orientation of the second marker(blue) relative
  to the base marker(red) on the map
  */
-function moveMark(e){
+function moveMark(e) {
     var x = e.target;
     var checkArrow = x.innerHTML;
-    var targetMark = marker.getLatLng();
-    if(checkArrow.match(/←/g)){
+    if (checkArrow.match(/←/g)) {
         currentWid = (-1) * Math.abs(currentWid);
     }
-    else if(checkArrow.match(/↑/g)){
+    else if (checkArrow.match(/↑/g)) {
         currentLen = Math.abs(currentLen);
     }
-    else if(checkArrow.match(/→/g)){
+    else if (checkArrow.match(/→/g)) {
         currentWid = Math.abs(currentWid);
     }
-    else if(checkArrow.match(/↓/g)){
+    else if (checkArrow.match(/↓/g)) {
         currentLen = (-1) * Math.abs(currentLen);
     }
     ondragend(); //updates the location of second marker based on the array clicked relative to the first marker
@@ -46,9 +43,9 @@ function moveMark(e){
  multiply it by a random hardcoded value
  then update the markers using ondraend();
  */
-function changeLen(lenX,lenY){
-    currentLen = lenY/100*0.0034117698669433594;//some random value for length of parking lot row
-    currentWid = lenX/100*0.0034117698669433594;//some random value for length of parking lot row
+function changeLen(lenX, lenY) {
+    currentLen = lenY / 100 * 0.0034117698669433594;//some random value for length of parking lot row
+    currentWid = lenX / 100 * 0.0034117698669433594;//some random value for length of parking lot row
     ondragend(); //update marker
 }
 
@@ -59,14 +56,21 @@ function clearDrawnLines() {
     }
     deleteCurrentMapCoordData();
 }
+
+function constructMapData() {
+    var Coords = getCurrentPolyLineObj();
+    var mapDataObj = {};
+}
 function saveData() {
-    if (getCurrentPolyLineObj().length == 0) {
+    var Coords = getCoordData();
+    if (Coords.length == 0) {//if empty return back to calling function
         return;
     }
-    var Coords = JSON.parse(getCurrentPolyLineObj());
+    var data_stream = "";
     for (var x in Coords) {
-        console.log(x.lat + " " + x.lng + " ");
+        data_stream += x + ":" + Coords[x].lat + "," + Coords[x].lng;
     }
+
     $.ajax({
             method: "POST",
             url: "adminPanel.php",
@@ -74,10 +78,11 @@ function saveData() {
             data: {Coordinates: Coords},
         })
         .done(function (msg) {
+            alert('hello2');
             var out = "";
-            for (var i = 0; i < msg.length; i++) {
-                out += "lat: " + msg[i].lat + " lng: " + msg[i].lng + "\n";
-            }
-            console.log(out);
+            //for (var i = 0; i < msg.length; i++) {
+            //    out += "lat: " + msg[i].lat + " lng: " + msg[i].lng + "\n";
+            //}
+            console.log(msg);
         });
 }
