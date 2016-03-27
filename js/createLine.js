@@ -8,8 +8,11 @@ var polyline_options = {
 };
 
 function getData(){
-    
+
 }
+/*
+    Function - changes the color the line based on
+ */
 function changeLineColor(rowStatistic) { //Changing color of row lines
     var color = "";
     if (rowStatistic <= 0.25) {
