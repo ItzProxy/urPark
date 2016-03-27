@@ -33,5 +33,6 @@ var map = new mapboxgl.Map({
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/getCoord.js"></script>
 <script type="text/javascript" src="js/createLine.js"></script>
+<script type="text/javascript" src="js/adminControl.js"></script>
 </body>
 </html>
