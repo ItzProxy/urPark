@@ -3,11 +3,16 @@
  */
 var moveMarker = document.getElementsByClassName("arrow");
 var getLengthRange = document.getElementById("lengthOfMarker");
-
+/*
+ Jquery event listeners
+ In order:
+ check if class
+ */
 $(document).ready(function() {
     $('.arrow').click(moveMark); //orient the blue marker based on the red marker
     $('#draw').click(draw_line); //draw line in admin Panel: createLine.js
     $('#clear').click(clearDrawnLines); //clear drawn lines on map
+    $('#saveCoords').click(saveData); //send data to server
 });
 $('.range').on("change mouseover", function () { //jquery eventlisteners for change on range
     var lenY = $("#lenY").val();
@@ -49,15 +54,30 @@ function changeLen(lenX,lenY){
 
 function clearDrawnLines() {
     var polyObj = getCurrentPolyLineObj();
-    map.removeLayer(polyObj);
-}
-
-
-$.ajax({
-    url: '/urPark/adminPanel.php',
-    data: {format: 'json'},
-    type: 'post',
-    success: function (output) {
-        alert(output);
+    while (polyObj.length != 0) {
+        map.removeLayer(polyObj.pop());
     }
-});
+    deleteCurrentMapCoordData();
+}
+function saveData() {
+    if (getCurrentPolyLineObj().length == 0) {
+        return;
+    }
+    var Coords = JSON.parse(getCurrentPolyLineObj());
+    for (var x in Coords) {
+        console.log(x.lat + " " + x.lng + " ");
+    }
+    $.ajax({
+            method: "POST",
+            url: "adminPanel.php",
+            datatype: "json",
+            data: {Coordinates: Coords},
+        })
+        .done(function (msg) {
+            var out = "";
+            for (var i = 0; i < msg.length; i++) {
+                out += "lat: " + msg[i].lat + " lng: " + msg[i].lng + "\n";
+            }
+            console.log(out);
+        });
+}

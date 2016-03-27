@@ -36,18 +36,10 @@ class admin
     }
 
     public function getMapData()
-    { //get data
-        if (isset($_POST['action']) && !empty($_POST['action'])) {
-            $action = $_POST['action'];
-            switch ($action) {
-                case 'test' :
-                    test();
-                    break;
-                case 'blah' :
-                    blah();
-                    break;
-                // ...etc...
-            }
+    { //get data from client
+        if (isset($_POST['Coordinates']) && !empty($_POST['Coordinates'])) {
+            $mapData = $_POST['mapData'];
+            echo json_encode($mapData);
         }
     }
 }
