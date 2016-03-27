@@ -26,7 +26,7 @@ class admin
      * Function: Create the admin panel display
      */
     public function createPanel(){
-        echo "<nav class='right'><ul>";
+        echo "<nav><ul>";
         echo "<li>Map Name<input type='text' id='mapname'></li>";
         echo "<li>"; //controls
         for($i = 0; $i < 4; $i++){ //creates arrow button

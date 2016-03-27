@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50723561-43b6-4619-a54f-ab7ce365bbf2" name="Default" comment="Added functions for database connection">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminMapAccess.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permiss.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tatus" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="50723561-43b6-4619-a54f-ab7ce365bbf2" name="Default" comment="seperated admin stuff from user stuff">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminPanel.php" afterPath="$PROJECT_DIR$/adminPanel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/createLine.js" afterPath="$PROJECT_DIR$/js/createLine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map.php" afterPath="$PROJECT_DIR$/map.php" />
     </list>
     <ignored path="urPark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +51,8 @@
       <file leaf-file-name="adminControl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/adminControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="57" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -73,14 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminPanel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminPanel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminPanel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-355">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="-34">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding>
-                <marker date="1459115387558" expanded="true" signature="2366:2805" placeholder="..." />
-                <marker date="1459115387558" expanded="true" signature="2762:2805" placeholder="{...}" />
+                <marker date="1459116381997" expanded="true" signature="2352:2791" placeholder="..." />
+                <marker date="1459116381997" expanded="true" signature="2748:2791" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -96,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createLine.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createLine.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/createLine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="170">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -121,7 +116,7 @@
       <file leaf-file-name="map.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="255">
               <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
@@ -131,8 +126,8 @@
       <file leaf-file-name="adminMapAccess.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminMapAccess.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="325">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="26" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -170,8 +165,8 @@
         <option value="$PROJECT_DIR$/Maps/adminMapAccess.php" />
         <option value="$PROJECT_DIR$/adminMapAccess.php" />
         <option value="$PROJECT_DIR$/map.php" />
-        <option value="$PROJECT_DIR$/adminPanel.php" />
         <option value="$PROJECT_DIR$/js/createLine.js" />
+        <option value="$PROJECT_DIR$/adminPanel.php" />
       </list>
     </option>
   </component>
@@ -332,7 +327,7 @@
       <workItem from="1458682834097" duration="10089000" />
       <workItem from="1458744084348" duration="5503000" />
       <workItem from="1458934663749" duration="255000" />
-      <workItem from="1458935628566" duration="49128000" />
+      <workItem from="1458935628566" duration="49592000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin.php, with very few functions that were seen for the user view.">
       <created>1458943689646</created>
@@ -376,11 +371,18 @@
       <option name="project" value="LOCAL" />
       <updated>1459041788546</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="seperated admin stuff from user stuff">
+      <created>1459115959726</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1459115959726</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64975000" />
+    <option name="totallyTimeSpent" value="65439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -424,7 +426,8 @@
     <MESSAGE value="Cleaned up the code to be more object oriented." />
     <MESSAGE value="Added a couple functions to smooth out the admin panel. Problem with parsing the object: mapData which is composed of latitude and longitude from MapBox." />
     <MESSAGE value="Added functions for database connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functions for database connection" />
+    <MESSAGE value="seperated admin stuff from user stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="seperated admin stuff from user stuff" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -766,14 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/marker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -790,22 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminMapAccess.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -813,6 +792,46 @@
           <folding>
             <element signature="e#158#358#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/createLine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminMapAccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="26" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -826,28 +845,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/adminPanel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="-34">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding>
-            <marker date="1459115387558" expanded="true" signature="2366:2805" placeholder="..." />
-            <marker date="1459115387558" expanded="true" signature="2762:2805" placeholder="{...}" />
+            <marker date="1459116381997" expanded="true" signature="2352:2791" placeholder="..." />
+            <marker date="1459116381997" expanded="true" signature="2748:2791" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/adminControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="57" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/createLine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>

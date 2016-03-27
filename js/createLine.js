@@ -3,11 +3,13 @@
  */
 var all_drawn_array = [];
 var polyline = [];//all instances of a saved lines
-var color_button = document.getElementById('colorOfLine');
 var polyline_options = {
     color: '#000'
 };
-color_button.addEventListener('click', changeLineColor);//event listener
+
+function getData(){
+    
+}
 function changeLineColor(rowStatistic) { //Changing color of row lines
     var color = "";
     if (rowStatistic <= 0.25) {
