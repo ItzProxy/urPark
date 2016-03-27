@@ -113,4 +113,4 @@ $admin = new admin(); //create new object
 $admin ->createPanel();
 $admin->getMapData();
 require_once ("adminheader.php");//required css for this page
-include ("map.php"); //include map
+include("adminMapAccess.php"); //include map

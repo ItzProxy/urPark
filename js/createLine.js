@@ -9,7 +9,19 @@ var polyline_options = {
 };
 color_button.addEventListener('click', changeLineColor);//event listener
 function changeLineColor(rowStatistic) { //Changing color of row lines
-
+    var color = "";
+    if (rowStatistic <= 0.25) {
+        color = "#ff0000"; //set to red(less than 25% chance to get row
+    }
+    else if (rowStatistic > 0.25 && rowStatistic < 0.50) {
+        color = "#ffbf00"; //set to orange(less than 50% but greater than 25% to get row
+    }
+    else if (rowStatistic > 0.50 && rowStatistic < 0.75) {
+        color = "#ffff00"; //set to yellow(less than 75% but greater than 50% to get row
+    }
+    else {
+        color = "#00ff00"; //set to green(greater than 75%
+    }
     color_button.innerHTML = '' + color + '';
     polyline_options.color = color;
 }
@@ -27,10 +39,11 @@ function printAllInArray(polylineArray) {
     var printTo = document.getElementById('print');
     var done = true;
     console.log(polylineArray.length);
-    printTo.innerHTML = '';
+    printTo.innerHTML = "<form id='map_submit'>";
     for (var i = 0; i < polylineArray.length; i++) {
         if (done) {
-            printTo.innerHTML += polylineArray[i].lat + ',' + polylineArray[i].lng + '<br />';
+            printTo.innerHTML += '<input id="start-"' + i + '>' + polylineArray[i].lat + '</input>'
+                + '<textbox id="startEnd-"' + i + '>' + polylineArray[i].lng + '</textbox>' + '<br />';
             done = false;
         }
         else {
@@ -38,6 +51,7 @@ function printAllInArray(polylineArray) {
             done = true;
         }
     }
+    printTo += "</form>";
 }
 //send coords in the format [latStart, lngStart], [latEnd, lngEnd], ...
 function sendCoordData() {
