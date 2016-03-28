@@ -17,3 +17,4 @@ var map = L.mapbox.map('map', 'mapbox.streets', {
 });
 //zoom to bound
 map.fitBounds(bounds);
+

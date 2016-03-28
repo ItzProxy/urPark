@@ -7,6 +7,11 @@
  check if class
  */
 $(document).ready(function () {
+    $('#openLotDraw').click(function () {
+        createLotCreator();
+        $(this).attr("disabled", true);
+        $(this).html("Lot Tools Opened")
+    });
     $('.arrow').click(moveMark); //orient the blue marker based on the red marker
     $('#draw').click(draw_line); //draw line in admin Panel: createLine.js
     $('#clear').click(clearDrawnLines); //clear drawn lines on map
@@ -17,6 +22,75 @@ $('.range').on("change", function () { //jquery event listeners for change on ra
     var lenX = $("#lenX").val();
     changeLen(lenY, lenX);
 });
+/*
+ Function: display errors on admin panel from functions, and used for debugging without use of console.log
+ */
+function error(typeError, message) {
+    var errorPanel = $('#error');
+    var errorShown;
+    switch (typeError) {
+        case "OK":
+            errorShown = "success";
+            break;
+        case "BAD":
+            errorShown = "danger";
+            break;
+        case "WARN":
+            errorShown = "warning";
+            break;
+        case "INFO":
+            errorShown = "info";
+            break;
+        default:
+            errorShown = typeError;
+    }
+    var displayError = '<div class="alert alert-' + errorShown + 'success">' +
+        '<strong>' + errorShown + '</strong>: ' + message + '</div>';
+    errorPanel.html(displayError);
+}
+function createLotCreator() {
+    var featureGroup = L.featureGroup().addTo(map);
+
+    var drawControl = new L.Control.Draw({
+        edit: {
+            featureGroup: featureGroup
+        },
+        draw: {
+            map: true,
+            polyline: false,
+            rectangle: false,
+            circle: false,
+            marker: false
+        }
+    }).addTo(map);
+
+//map.on('draw:created', showPolygonArea);
+    map.on('draw:created', showPolygonArea);
+    map.on('draw:edited', showPolygonAreaEdited);
+    //recreates if polygon is in need of editing
+    function showPolygonAreaEdited(e) {
+        e.layers.eachLayer(function (layer) {
+            showPolygonArea({layer: layer});
+        });
+    }
+
+    //creates polygon
+    function showPolygonArea(e) {
+        if ($('#mapName').val() == "" || $('#lotNum').val() == "") { //error checking for empty
+            var errorMsg = "mapName or lotName are empty!";
+            error("BAD", errorMsg);
+            return;
+        }
+        featureGroup.addLayer(e.layer);
+        var type = e.layerType;
+        var layer = e.layer;
+        var shape = layer.toGeoJSON();
+        shape.properties.mapName = $('#mapName').val();
+        shape.properties.lotName = $('#lotName').val();
+        var shape_for_db = JSON.stringify(shape);
+        error("OK", shape_for_db);
+    }
+}
 /*
  Function: Based on arrow clicked using regex, changes the orientation of the second marker(blue) relative
  to the base marker(red) on the map
@@ -62,33 +136,31 @@ function constructMapData() {
     var mapDataObj = {};
 }
 function saveData() {
+    /*
+     var temp = {"type":"Feature",
+     "properties":{},
+     "geometry":{"type":"Polygon",
+     "coordinates":[[[-104.58907127380371,50.41587420475807],
+     [-104.5878267288208,50.414629940526915],
+     [-104.58617448806763,50.416051954123276],
+     [-104.58907127380371,50.41587420475807]]]}};
+     L.geoJson(temp).addTo(map);
+     */
     var Coords = getCoordData();
     if (Coords.length == 0) {//if empty return back to calling function
         return;
     }
-    var data_stream = "[";
-    for (var x = 0; x < Coords.length; x++) {
-        data_stream += '{' +
-            '"startLat":' + Coords[x][0].lat + ',' +
-            '"startLng":' + Coords[x][0].lng + ',' +
-            '"endLat":' + Coords[x][1].lat + ',' +
-            '"endLng":' + Coords[x][1].lng + '}';
-        console.log(data_stream);
-    }
-    data_stream += ']';
-
+    var data_stream = JSON.parse(Coords);
+    console.log()
     $.ajax({
             method: "POST",
             url: "adminPanel.php",
             datatype: "json",
-            data: {Coordinates: Coords},
+            data: {Coordinates: data_stream},
         })
         .done(function (msg) {
             alert('hello2');
             var out = JSON.stringify(msg);
-            //for (var i = 0; i < msg.length; i++) {
-            //    out += "lat: " + msg[i].lat + " lng: " + msg[i].lng + "\n";
-            //}
             console.log(out);
         });
 }
