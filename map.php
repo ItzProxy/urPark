@@ -14,9 +14,9 @@
 <body>
 
 <div id='map'></div>
-<div id='length'></div>
 <pre id='coordinates' class='ui-coordinates'></pre>
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/createLine.js"></script>
+<script type="text/javascript" src="js/userControls.js"></script>
 </body>
 </html>
