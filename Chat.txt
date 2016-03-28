@@ -1,4 +1,0 @@
-Hello
-Hi Dionne
-Hello this is Alec
-https://www.mapbox.com/mapbox.js/example/v1.0.0/select-center-form/
