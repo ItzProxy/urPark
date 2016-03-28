@@ -5,9 +5,11 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
 <nav role="nav" class="right">
-    <a class="active" href="#nav"></a>
+    <a class="active" href="#"></a>
     <ul id="nav-bar">
-        <li>asd</li>
+        <li>
+            <nav id='menu-ui' class='menu-ui'></nav>
+        </li>
     </ul>
     <div id="print"></div>
 </nav>

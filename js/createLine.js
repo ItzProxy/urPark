@@ -3,9 +3,6 @@
  */
 var all_drawn_array = [];
 var polyline = [];//all instances of a saved lines
-var polyline_options = {
-    color: '#000'
-};
 
 /*
  Function - changes the color the line based on
@@ -24,8 +21,8 @@ function changeLineColor(rowStatistic) { //Changing color of row lines
     else {
         color = "#00ff00"; //set to green(greater than 75%
     }
-    color_button.innerHTML = '' + color + '';
-    polyline_options.color = color;
+    console.log(color);
+    return color;
 }
 /*
  Function: Draws a line between 2 markers on map, saves the coordinates used into an array and calls printAllInArray
@@ -35,7 +32,9 @@ function draw_line() {
     var m = marker.getLatLng(),
         n = lenMarker.getLatLng();
     var line_draw = [m, n];
-    polyline.push(L.polyline(line_draw, polyline_options).addTo(map));
+    polyline.push(L.polyline(line_draw, function () {
+        return changeLineColor(0.75)
+    }).addTo(map));
     all_drawn_array.push(line_draw);
     printAllInArray(all_drawn_array);
 }
@@ -43,7 +42,6 @@ function draw_line() {
 //prints all coordinates to a 'print' div
 function printAllInArray(polylineArray) {
     var printTo = document.getElementById('print');
-    var done = true;
     console.log(polylineArray.length);
     printTo.innerHTML = "";
     var currRow = 1;

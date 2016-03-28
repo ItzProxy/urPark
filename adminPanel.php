@@ -8,10 +8,10 @@
  */
 class admin
 {
+    private $sqli; //server connection
     //server variables
     private $hostname = "localhost";
-    private $port = 3306;
-    private $dbname = "urPark";
+    private $dbname = "potter3a";
     private $username = "root";
     private $password = "";
 
@@ -26,38 +26,41 @@ class admin
     /*
      * Function: Create the admin panel display
      */
-    public function createPanel(){
+    public function createPanel()
+    {
         echo "<div class='right'><ul>";
         echo "<li><div id='error'></div></li>";
         echo "<li>Map Name<input type='text' placeholder='Map Name' id='mapName'></li>";
-        echo "<li>Lot<input type='text' placeholder='Lot Number' id='lotNum'></li>";
+        echo "<li>Lot<input type='text' placeholder='Lot Name' id='lotName'></li>";
         echo "<li>"; //controls
-        for($i = 0; $i < 4; $i++){ //creates arrow button
+        for ($i = 0; $i < 4; $i++) { //creates arrow button
             echo $adminButton = $this->button . "arrow" . $i . " class='arrow'>&#859" . ($i + 2) . "</button>" . PHP_EOL; //prints arrow
         }
         $adminDrawLine = $this->button . "draw>" . "Click To Draw</button>" . PHP_EOL; //
         echo $adminDrawLine;
         $adminOpenLotTool = $this->button . "openLotDraw" . ">Open Lot Tool</button>" . PHP_EOL;
         echo $adminOpenLotTool;
-        $adminSaveResults = $this->button."saveCoords>"."Click To Save</button>".PHP_EOL;
+        $adminSaveResults = $this->button . "saveCoords>" . "Click To Save</button>" . PHP_EOL;
         echo $adminSaveResults;
-        $adminYAdjust = "LenY:<input type='range' id='lenY' value='".$this->lenY."'>".PHP_EOL;
-        $adminXAdjust = "LenX:<input type='range' id='lenX' value='".$this->lenX."'>".PHP_EOL;
+        $adminYAdjust = "LenY:<input type='range' id='lenY' value='" . $this->lenY . "'>" . PHP_EOL;
+        $adminXAdjust = "LenX:<input type='range' id='lenX' value='" . $this->lenX . "'>" . PHP_EOL;
         echo "<div class='range'>";
-        echo $adminXAdjust.PHP_EOL;
+        echo $adminXAdjust . PHP_EOL;
         echo $adminYAdjust;
-        echo "</div>".PHP_EOL;
+        echo "</div>" . PHP_EOL;
         $adminRemoveLines = $this->button . 'clear>Clear Map of Drawn Lines</button>' . PHP_EOL;
         echo $adminRemoveLines;
         echo '</li><li><div id="print"></div></li>';
         echo '</ul></div>';
+        $this->accessDB();
     }
+
     /*
      *
      */
     public function getMaps()
     {
-
+        $sql = "select * from";
     }
 
     /*
@@ -65,17 +68,18 @@ class admin
      */
     public function accessDB()
     {
-        try {
-            //creating connection
-            $conn = new PDO("dblib:host=$this->hostname:
-                $this->port;dbname=$this->dbname",
-                "$this->username",
-                "$this->password");//in form host:port;dbName,username,password
-            echo "<script type='text/javascript'> console.log('database created')";//debug purposes
-            return $conn;//only return if connection is possible
-        } catch (PDOException $e) {
-            echo "<script type='text/javascript'> console.log('Failed: $e->getMessage()')"; //error message
+        $this->sqli = new mysqli($this->hostname, $this->username, $this->password, $this->dbname);
+        //creating connection
+        if ($this->sqli->connect_errno) {
+            printf("Connect failed: %s\n", $this->sqli->connect_error);
+            exit();
         }
+        if ($this->sqli->ping()) {
+            printf("Our connection is ok!\n");
+        } else {
+            printf("Error: %s\n", $this->sqli->error);
+        }
+        //$this->sqli->close();
     }
 
     public function saveDataToDB($type)
@@ -84,23 +88,6 @@ class admin
             || (isset($_POST['dminmapName']) && !empty($_POST['adminMapName']))
         ) {
             $conn = $this->accessDB();//get connection set up
-        }
-    }
-    public function getMapData()
-    { //get data from client
-        if (isset($_POST['Coordinates']) && !empty($_POST['Coordinates'])) {
-            echo "<script type='text/javascript'> console.log('here') </script>";
-            $json = array();
-            $mapData = $_POST['Coordinates'];
-            var_dump(json_decode($mapData, true));
-            /*
-    for ($i = 0; $i < $mapData . sizeof(); $i++) {
-        $json[] = array(
-            'lat' => $mapData['lat'],
-            'lng' => $mapData['lng']
-        );
-    }
-    */
         }
     }
 
@@ -116,7 +103,7 @@ class admin
         }
     }
 }
+
 $admin = new admin(); //create new object
-$admin ->createPanel();
-$admin->getMapData();
+$admin->createPanel();
 require_once("adminMapAccess.php"); //include map

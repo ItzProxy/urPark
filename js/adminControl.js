@@ -20,7 +20,7 @@ $(document).ready(function () {
 $('.range').on("change", function () { //jquery event listeners for change on range
     var lenY = $("#lenY").val();
     var lenX = $("#lenX").val();
-    changeLen(lenY, lenX);
+    changeLen(lenX, lenY);
 });
 /*
  Function: display errors on admin panel from functions, and used for debugging without use of console.log
@@ -76,7 +76,9 @@ function createLotCreator() {
 
     //creates polygon
     function showPolygonArea(e) {
-        if ($('#mapName').val() == "" || $('#lotNum').val() == "") { //error checking for empty
+        var mn = $('#mapName').val();
+        var ln = $('#lotName').val();
+        if (mn == "" || ln == "") { //error checking for empty
             var errorMsg = "mapName or lotName are empty!";
             error("BAD", errorMsg);
             return;
@@ -85,8 +87,8 @@ function createLotCreator() {
         var type = e.layerType;
         var layer = e.layer;
         var shape = layer.toGeoJSON();
-        shape.properties.mapName = $('#mapName').val();
-        shape.properties.lotName = $('#lotName').val();
+        shape.properties.mapName = mn.val();
+        shape.properties.lotName = ln.val();
         var shape_for_db = JSON.stringify(shape);
         error("OK", shape_for_db);
     }
@@ -130,36 +132,19 @@ function clearDrawnLines() {
     }
     deleteCurrentMapCoordData();
 }
-
-function constructMapData() {
-    var Coords = getCurrentPolyLineObj();
-    var mapDataObj = {};
-}
 function saveData() {
-    /*
-     var temp = {"type":"Feature",
-     "properties":{},
-     "geometry":{"type":"Polygon",
-     "coordinates":[[[-104.58907127380371,50.41587420475807],
-     [-104.5878267288208,50.414629940526915],
-     [-104.58617448806763,50.416051954123276],
-     [-104.58907127380371,50.41587420475807]]]}};
-     L.geoJson(temp).addTo(map);
-     */
     var Coords = getCoordData();
     if (Coords.length == 0) {//if empty return back to calling function
         return;
     }
-    var data_stream = JSON.parse(Coords);
-    console.log()
+    var data_stream = JSON.stringify(Coords);
     $.ajax({
             method: "POST",
             url: "adminPanel.php",
             datatype: "json",
-            data: {Coordinates: data_stream},
+            data: {Coordinates: data_stream}
         })
         .done(function (msg) {
-            alert('hello2');
             var out = JSON.stringify(msg);
             console.log(out);
         });

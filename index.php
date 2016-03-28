@@ -1,31 +1,31 @@
-<?php include 'header.php'?>
+<?php include 'header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<title>Parking Pal</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Parking Pal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script
+        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-	<!-- Here is where the ajax/jquery request goes to get the map according to the selection
-	 Request or store in cache/cookies is the way to do this 
-	<div class="overlayMap">
-		<div id="lotx"></div>
-	</div>
-	-->
-	<?php include'side-nav.php'?>
-	<div class="map">
-	<?php include 'map.php'?>
-	</div>
+<!-- Here is where the ajax/jquery request goes to get the map according to the selection
+ Request or store in cache/cookies is the way to do this 
+<div class="overlayMap">
+    <div id="lotx"></div>
+</div>
+-->
+<?php include 'side-nav.php' ?>
+<div class="map">
+    <?php include 'map.php' ?>
+</div>
 </body>
 
 </html>

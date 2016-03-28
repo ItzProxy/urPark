@@ -3,7 +3,6 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
-<script type="text/javascript" src="js/overlay.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-1">

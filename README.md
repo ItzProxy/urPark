@@ -6,4 +6,4 @@ Right now this uses University of Regina's M Parking Lots
 
 
 
-This project is a prototype that can act as a final version if the port over to a framework(Django) does 
+This project is a prototype that can act as a final version if the port over to a framework(Django) does go underway

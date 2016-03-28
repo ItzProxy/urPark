@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset=utf-8/>
-    <title>Show drawn polygon area</title>
+    <title>urPark</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
     <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet'/>
