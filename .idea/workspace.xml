@@ -2,6 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50723561-43b6-4619-a54f-ab7ce365bbf2" name="Default" comment="Finished getting initial values from client">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/css/component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/css/demo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/codropsicons/codropsicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/codropsicons/codropsicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/codropsicons/codropsicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/codropsicons/codropsicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/codropsicons/license.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/Read Me.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/ecoicons.dev.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/ecoicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/ecoicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/ecoicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/ecoicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/fonts/ecoicons/license.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/js/classie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/js/gnmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gnmenu/js/modernizr.custom.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="urPark.iws" />
@@ -108,7 +128,7 @@
               <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1459166087210" expanded="true" signature="1421:1492" placeholder="..." />
+                <marker date="1459167644540" expanded="true" signature="1421:1492" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -187,6 +207,7 @@
         <option value="$PROJECT_DIR$/polygons.php" />
         <option value="$PROJECT_DIR$/lines.php" />
         <option value="$PROJECT_DIR$/js/userControls.js" />
+        <option value="$PROJECT_DIR$/.metadata/.plugins/org.springsource.ide.eclipse.dashboard.ui/feeds/dashboard.feeds.update/623127801.xml" />
       </list>
     </option>
   </component>
@@ -333,7 +354,7 @@
       <workItem from="1458682834097" duration="10089000" />
       <workItem from="1458744084348" duration="5503000" />
       <workItem from="1458934663749" duration="255000" />
-      <workItem from="1458935628566" duration="98061000" />
+      <workItem from="1458935628566" duration="98277000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin.php, with very few functions that were seen for the user view.">
       <created>1458943689646</created>
@@ -423,13 +444,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113908000" />
+    <option name="totallyTimeSpent" value="114124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3266385" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -826,7 +847,7 @@
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1459166087210" expanded="true" signature="1421:1492" placeholder="..." />
+            <marker date="1459167644540" expanded="true" signature="1421:1492" placeholder="..." />
           </folding>
         </state>
       </provider>
