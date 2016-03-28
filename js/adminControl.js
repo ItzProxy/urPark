@@ -12,7 +12,7 @@ $(document).ready(function () {
     $('#clear').click(clearDrawnLines); //clear drawn lines on map
     $('#saveCoords').click(saveData); //send data to server
 });
-$('.range').on("change mouseover", function () { //jquery event listeners for change on range
+$('.range').on("change", function () { //jquery event listeners for change on range
     var lenY = $("#lenY").val();
     var lenX = $("#lenX").val();
     changeLen(lenY, lenX);
@@ -66,10 +66,16 @@ function saveData() {
     if (Coords.length == 0) {//if empty return back to calling function
         return;
     }
-    var data_stream = "";
-    for (var x in Coords) {
-        data_stream += x + ":" + Coords[x].lat + "," + Coords[x].lng;
+    var data_stream = "[";
+    for (var x = 0; x < Coords.length; x++) {
+        data_stream += '{' +
+            '"startLat":' + Coords[x][0].lat + ',' +
+            '"startLng":' + Coords[x][0].lng + ',' +
+            '"endLat":' + Coords[x][1].lat + ',' +
+            '"endLng":' + Coords[x][1].lng + '}';
+        console.log(data_stream);
     }
+    data_stream += ']';
 
     $.ajax({
             method: "POST",
@@ -79,10 +85,10 @@ function saveData() {
         })
         .done(function (msg) {
             alert('hello2');
-            var out = "";
+            var out = JSON.stringify(msg);
             //for (var i = 0; i < msg.length; i++) {
             //    out += "lat: " + msg[i].lat + " lng: " + msg[i].lng + "\n";
             //}
-            console.log(msg);
+            console.log(out);
         });
 }

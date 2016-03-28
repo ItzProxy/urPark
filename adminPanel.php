@@ -27,6 +27,7 @@ class admin
      */
     public function createPanel(){
         echo "<nav><ul>";
+        echo "<";
         echo "<li>Map Name<input type='text' id='mapname'></li>";
         echo "<li>"; //controls
         for($i = 0; $i < 4; $i++){ //creates arrow button

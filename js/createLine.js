@@ -7,9 +7,6 @@ var polyline_options = {
     color: '#000'
 };
 
-function getData(){
-
-}
 /*
     Function - changes the color the line based on
  */
@@ -30,12 +27,16 @@ function changeLineColor(rowStatistic) { //Changing color of row lines
     color_button.innerHTML = '' + color + '';
     polyline_options.color = color;
 }
+/*
+ Function: Draws a line between 2 markers on map, saves the coordinates used into an array and calls printAllInArray
+ with the array coordinates
+ */
 function draw_line() {
     var m = marker.getLatLng(),
         n = lenMarker.getLatLng();
     var line_draw = [m, n];
     polyline.push(L.polyline(line_draw, polyline_options).addTo(map));
-    all_drawn_array.push(m, n);
+    all_drawn_array.push(line_draw);
     printAllInArray(all_drawn_array);
 }
 
@@ -44,22 +45,23 @@ function printAllInArray(polylineArray) {
     var printTo = document.getElementById('print');
     var done = true;
     console.log(polylineArray.length);
-    printTo.innerHTML = "<form id='map_submit'>";
+    printTo.innerHTML = "";
+    var currRow = 1;
     for (var i = 0; i < polylineArray.length; i++) {
-        if (done) {
-            printTo.innerHTML += '<input id="start-"' + i + '>' + polylineArray[i].lat + '</input>'
-                + '<textbox id="startEnd-"' + i + '>' + polylineArray[i].lng + '</textbox>' + '<br />';
-            done = false;
-        }
-        else {
-            printTo.innerHTML += 'to ' + polylineArray[i].lat + ',' + polylineArray[i].lng + '<br />';
-            done = true;
-        }
+        // if (done) {
+        printTo.innerHTML += "<button type='button' class='btn btn-info' data-toggle='collapse' data-target=#row" + currRow + ">" +
+            "Row: " + currRow + "</button> <br /> <div id='row" + currRow + "' class='collapse'>";
+        var mapData = 'Start:' + polylineArray[i][0].lat + ',<br /> ' + polylineArray[i][0].lng +
+            '<br/>End:' + polylineArray[i][1].lat + ',<br /> ' + polylineArray[i][1].lng;
+        $("<div />").append(mapData).appendTo("#row" + currRow);//append starting point data to div
+        var rowData = '<input type="number" name="totalSpots" placeholder="Total Spots" />' +
+            '<input type="number" name="filledSpots" placeholder="Filled Spots"/>';
+        $("<div />").append(rowData).appendTo("#row" + currRow);//append starting point data to div
+        currRow++; //currRow = i + 1;
     }
-    printTo += "</form>";
 }
 //send coords in the format [latStart, lngStart], [latEnd, lngEnd], ...
-function sendCoordData() {
+function getCoordData() {
     return all_drawn_array;
 }
 
