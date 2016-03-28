@@ -87,8 +87,8 @@ function createLotCreator() {
         var type = e.layerType;
         var layer = e.layer;
         var shape = layer.toGeoJSON();
-        shape.properties.mapName = mn.val();
-        shape.properties.lotName = ln.val();
+        shape.properties.mapName = mn;
+        shape.properties.lotName = ln;
         var shape_for_db = JSON.stringify(shape);
         error("OK", shape_for_db);
     }
