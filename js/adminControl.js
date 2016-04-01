@@ -149,3 +149,28 @@ function saveData() {
             console.log(out);
         });
 }
+
+function update_user_data(response) {
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        data: response,
+        url: 'adminPanel.php',
+        success: function (msg) {
+            if (msg.error == 1) {
+                alert('Something Went Wrong!');
+            }
+        }
+    });
+}
+
+function onSignIn(googleUser) {
+    var id_token = googleUser.getAuthResponse().id_token;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://yourbackend.example.com/tokensignin');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+        console.log('Signed in as: ' + xhr.responseText);
+    };
+    xhr.send('idtoken=' + id_token);
+}
