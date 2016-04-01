@@ -366,7 +366,7 @@
       <workItem from="1458934663749" duration="255000" />
       <workItem from="1458935628566" duration="99543000" />
       <workItem from="1459372701967" duration="5925000" />
-      <workItem from="1459488688476" duration="2124000" />
+      <workItem from="1459488688476" duration="2139000" />
     </task>
     <task id="LOCAL-00001" summary="Added admin.php, with very few functions that were seen for the user view.">
       <created>1458943689646</created>
@@ -466,11 +466,18 @@
       <option name="project" value="LOCAL" />
       <updated>1459490777169</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added google sign to adminPanel">
+      <created>1459490815448</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1459490815448</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123439000" />
+    <option name="totallyTimeSpent" value="123454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
