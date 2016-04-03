@@ -7,10 +7,11 @@
  check if class
  */
 var mapName;
+var mapID;
 $(document).ready(function () {
     $('#openLotDraw').click(function () {
         createLotCreator();
-        $(this).attr("disabled", true);
+        $(this).attr("hidden", true);
         $(this).html("Lot Tools Opened")
     });
     $('.arrow').click(moveMark); //orient the blue marker based on the red marker
@@ -23,7 +24,13 @@ $(document).ready(function () {
         $('#currentMap').html('Current Map:' + mapName);
         boundMap(mapName);
         getLotData(mapNameChosen);
+        mapID = mapNameChosen;
     }); //get id attribute of the id day
+    $('#openRowTools').click(function () {
+        $("[role='rowtools']").attr("hidden", false);
+        $(this).attr("hidden", true);
+    });
+    //$('#lotName').click(checkLotName);
 });
 $('.range').on("change", function () { //jquery event listeners for change on range
     var lenY = $("#lenY").val();
@@ -34,6 +41,7 @@ $('.range').on("change", function () { //jquery event listeners for change on ra
  Function: display errors on admin panel from functions, and used for debugging without use of console.log
  */
 function error(typeError, message) {
+    $('#error').html('');
     var errorPanel = $('#error');
     var errorShown;
     switch (typeError) {
@@ -140,9 +148,30 @@ function clearDrawnLines() {
     }
     deleteCurrentMapCoordData();
 }
+function getCoordData() {
+    var some = [];
+    var mn = mapID.replace(/^\D+/g, "");
+    var ln = $('#lotName').val();
+    if (mn == "" || ln == "") { //error checking for empty
+        var errorMsg = "mapName or lotName are empty!";
+        error("BAD", errorMsg);
+        return;
+    }
+    var counter = 0;
+    for (var i in polyline) {
+        some[i] = polyline[i].toGeoJSON();
+        some[i].properties.lotName = ln;
+        some[i].properties.row = ++counter;
+        some[i].properties.mapID = mn;
+    }
+    var l = JSON.stringify(some);
+    //console.log(l);
+    return some;
+}
 function saveData() {
     var Coords = getCoordData();
     var dataStream = "";
+
     for (var i in Coords) {
         dataStream += JSON.stringify(Coords[i]);
     }
@@ -150,14 +179,11 @@ function saveData() {
     $.ajax({
             method: "POST",
             url: "php/setRowData.php",
-            data: {data: dataStream},
+        data: {mapID: mapID, data: dataStream},
             success: function () {
                 console.log("sent request to server");
             }
-        })
-        .done(function (msg) {
-            
-        });
+    }).success()
 }
 function boundMap(thisMap) {
     var url = "php/getMapData.php?currMapName=" + thisMap;
@@ -167,7 +193,7 @@ function boundMap(thisMap) {
         var southWest = L.latLng(result['northLat'], result['northLng']),
             northEast = L.latLng(result['southLat'], result['southLng']),
             bounds = L.latLngBounds(northEast, southWest);  //bounds
-        map;
+        map.setMaxBounds(bounds);
         map.fitBounds(bounds);
     });
 }
@@ -199,7 +225,7 @@ function onSignIn(googleUser) {
 
 function checkMapNameExists() {
     $.ajax({
-        type: "POST",
+        type: "GET",
         dataType: 'json',
         data: response,
         url: 'adminPanel.php',
@@ -228,6 +254,8 @@ function getLotData(mapID) {
 function getCurrentMapName() {
     return mapName;
 }
+
+
 function adminDrawLine(coord_1, coord_2) {
     function draw_line() {
         var m = marker.getLatLng(),

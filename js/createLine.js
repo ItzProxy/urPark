@@ -73,16 +73,4 @@ function deleteCurrentMapCoordData() {
 function getCurrentPolyLineObj() {
     return polyline; //return the variable polyline
 }
-function getCoordData() {
-    var some = [];
-    var counter = 0;
-    for (var i in polyline) {
-        some[i] = polyline[i].toGeoJSON();
-        some[i].properties.row = ++counter;
-        some[i].properties.mapName = getCurrentMapName();
-    }
-    console.log(some);
-    return some;
-}
-
 

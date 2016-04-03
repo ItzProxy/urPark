@@ -38,22 +38,22 @@ class admin
     public function createLogin()
     {
         echo "<div class='g-signin2' data-onsuccess='onSignIn' data-theme='dark'></div>
-                <script>
-                  function onSignIn(googleUser) {
-                      // Useful data for your client-side scripts:
-                      var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log('ID Token: ' + id_token);
-    }
-</script>";
+                    <script>
+                      function onSignIn(googleUser) {
+                          // Useful data for your client-side scripts:
+                          var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Don't send this directly to your server!
+            console.log('Full Name: ' + profile.getName());
+            console.log('Given Name: ' + profile.getGivenName());
+            console.log('Family Name: ' + profile.getFamilyName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+    
+            // The ID token you need to pass to your backend:
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log('ID Token: ' + id_token);
+        }
+    </script>";
     }
 
     /*
@@ -63,9 +63,11 @@ class admin
     {
         echo "<div class='right'><ul>";
         echo "<li><div id='error'></div></li>";
+        /*
         echo "<li>";
         $this->createLogin();
         echo "</li>";
+        */
         echo "<li class = 'inline-form'>";
         echo "<p id='currentMap'></p>";
         $this->getMaps();
@@ -85,7 +87,9 @@ class admin
         $adminLotSave = $this->button . "saveLot>Save Lot Drawn</button>" . PHP_EOL;
         echo $adminLotName;
         echo $adminLotSave;
-        echo "<br />";
+        $adminOpenRowTools = $this->button . "openRowTools>Open Row Tools</button>" . PHP_EOL;
+        echo $adminOpenRowTools;
+        echo "</li><li role='rowtools' hidden='hidden'>";
         for ($i = 0; $i < 4; $i++) { //creates arrow button
             echo $adminButton = $this->button . "arrow" . $i . " class='arrow'>&#859" . ($i + 2) . "</button>" . PHP_EOL; //prints arrow
         }

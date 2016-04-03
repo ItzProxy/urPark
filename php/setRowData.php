@@ -9,18 +9,20 @@ require_once("adminPanel.php");
 $admin = new admin();
 $admin->accessDB();
 
-if (isset($_POST['rowData']) && !empty($_POST['rowData'])) {
+if (isset($_POST['data']) && !empty($_POST['data']) && isset($_POST['mapID'])) {
     $admin->checkConnection(); //recheck connection is valid
     $newDB = $admin->getDB(); //set initial connections
-    $rowData = json_decode(stripcslashes($_POST['rowData']));
-    foreach ($rowData as $d) {
-        echo "<script type='text/javascript'>console.log(" . $d . ")</script>";
+    $mapID = $_POST['mapID'];
+    $rowData = json_decode(stripcslashes($_POST['data']));
+    $admin->checkConnection();
+    $statement = $newDB->prepare("INSERT INTO `lot`(`m_id`, `lotName`, `lotGeo`) VALUES (:m_id,:lotName,:lotGeo)");
+    $statement->bindParam(':m_id', $mapID, PDO::PARAM_INT);
+    $statement->bindParam(':lotName', $rowData['properties']['lotName'], PDO::PARAM_STR);
+    $statement->bindParam(':lotGeo', $_POST['data'], PDO::PARAM_STR);
+    $check = $statement->execute();
+    if ($check) {
+        echo " <script type='text/javascript'>error('OK', 'Row Data saved')</script>";
+    } else {
+        echo " <script type='text/javascript'>error('BAD', 'Row Data did not saved')</script>";
     }
-    while ($result = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $rls = array('l_id' => $result['l_id'],
-            'lotName' => $result['lotName'],
-            'lotGeo' => $result['lotGeo']);
-        echo json_encode($rls);
-    }
-
 }

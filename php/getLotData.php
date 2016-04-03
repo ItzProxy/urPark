@@ -16,7 +16,6 @@ if (isset($_GET['mapID']) && !empty($_GET['mapID'])) {
     $statement = $newDB->prepare("SELECT * from lot where m_id=:mapID");
     $statement->bindParam(':mapID', $mapID, PDO::PARAM_INT);
     $statement->execute();
-    var_dump($statement->fetchAll());
     while ($result = $statement->fetch(PDO::FETCH_ASSOC)) {
         $rls = array('l_id' => $result['l_id'],
             'lotName' => $result['lotName'],
