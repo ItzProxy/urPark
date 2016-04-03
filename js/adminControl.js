@@ -6,6 +6,7 @@
  In order:
  check if class
  */
+var mapName;
 $(document).ready(function () {
     $('#openLotDraw').click(function () {
         createLotCreator();
@@ -16,6 +17,13 @@ $(document).ready(function () {
     $('#draw').click(draw_line); //draw line in admin Panel: createLine.js
     $('#clear').click(clearDrawnLines); //clear drawn lines on map
     $('#saveCoords').click(saveData); //send data to server
+    $('#getMap').on('click', 'li', function () {
+        var mapNameChosen = $(this).attr('id');
+        mapName = $('li > a').html();
+        $('#currentMap').html('Current Map:' + mapName);
+        boundMap(mapName);
+        getLotData(mapNameChosen);
+    }); //get id attribute of the id day
 });
 $('.range').on("change", function () { //jquery event listeners for change on range
     var lenY = $("#lenY").val();
@@ -64,7 +72,6 @@ function createLotCreator() {
         }
     }).addTo(map);
 
-//map.on('draw:created', showPolygonArea);
     map.on('draw:created', showPolygonArea);
     map.on('draw:edited', showPolygonAreaEdited);
     //recreates if polygon is in need of editing
@@ -102,6 +109,7 @@ function moveMark(e) {
     var checkArrow = x.innerHTML;
     if (checkArrow.match(/←/g)) {
         currentWid = (-1) * Math.abs(currentWid);
+        console.log(currentWid);
     }
     else if (checkArrow.match(/↑/g)) {
         currentLen = Math.abs(currentLen);
@@ -134,20 +142,34 @@ function clearDrawnLines() {
 }
 function saveData() {
     var Coords = getCoordData();
-    if (Coords.length == 0) {//if empty return back to calling function
-        return;
+    var dataStream = "";
+    for (var i in Coords) {
+        dataStream += JSON.stringify(Coords[i]);
     }
-    var data_stream = JSON.stringify(Coords);
+    console.log(dataStream);
     $.ajax({
             method: "POST",
-            url: "adminPanel.php",
-            datatype: "json",
-            data: {Coordinates: data_stream}
+            url: "php/setRowData.php",
+            data: {data: dataStream},
+            success: function () {
+                console.log("sent request to server");
+            }
         })
         .done(function (msg) {
-            var out = JSON.stringify(msg);
-            console.log(out);
+            
         });
+}
+function boundMap(thisMap) {
+    var url = "php/getMapData.php?currMapName=" + thisMap;
+    var result = "";
+    $.get(url, function (data) {
+        result = JSON.parse(data);
+        var southWest = L.latLng(result['northLat'], result['northLng']),
+            northEast = L.latLng(result['southLat'], result['southLng']),
+            bounds = L.latLngBounds(northEast, southWest);  //bounds
+        map;
+        map.fitBounds(bounds);
+    });
 }
 
 function update_user_data(response) {
@@ -173,4 +195,49 @@ function onSignIn(googleUser) {
         console.log('Signed in as: ' + xhr.responseText);
     };
     xhr.send('idtoken=' + id_token);
+}
+
+function checkMapNameExists() {
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        data: response,
+        url: 'adminPanel.php',
+        success: function (msg) {
+            if (msg.error == 1) {
+                alert('Something Went Wrong!');
+            }
+        }
+    });
+}
+
+function getLotData(mapID) {
+    var num = mapID.replace(/^\D+/g, "");
+    var url = "php/getLotData.php?mapID=" + num;
+    var result = "";
+    $.get(url, function (data) {
+        try {
+            result = JSON.parse(data);
+        }
+        catch (e) {
+            console.log('getLotData not in ajax!');
+        }
+        console.log(result);
+    });
+}
+function getCurrentMapName() {
+    return mapName;
+}
+function adminDrawLine(coord_1, coord_2) {
+    function draw_line() {
+        var m = marker.getLatLng(),
+            n = lenMarker.getLatLng();
+        var line_draw = [m, n];
+        var line = L.polyline;
+        polyline.push(L.polyline(line_draw, function () {
+            changeLineColor(0.25);
+        }).addTo(map));
+        all_drawn_array.push(line_draw);
+        printAllInArray(all_drawn_array);
+    }
 }

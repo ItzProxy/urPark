@@ -22,9 +22,9 @@ marker.on('dragend', ondragend);
 ondragend();
 
 function ondragend() { //drag the function and debug the length between two markers
-    var m = marker.getLatLng(),
-        n = lenMarker.getLatLng();
+    var m = marker.getLatLng();
     lenMarker.setLatLng([m.lat + currentLen, m.lng + currentWid]);
+    var n = lenMarker.getLatLng();
     coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />' +
         'Longitude: ' + m.lng + '<br />' +
         'LengthX:' + Math.abs(n.lng - m.lng) +

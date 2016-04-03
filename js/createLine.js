@@ -32,9 +32,13 @@ function draw_line() {
     var m = marker.getLatLng(),
         n = lenMarker.getLatLng();
     var line_draw = [m, n];
-    polyline.push(L.polyline(line_draw, function () {
-        return changeLineColor(0.75)
-    }).addTo(map));
+    var line = L.polyline;
+    polyline.push(L.polyline(line_draw, changeLineColor(0.25)
+    ).addTo(map));
+    var popup = L.popup()
+        .setLatLng(m)
+        .setContent("Row: " + (all_drawn_array.length + 1))
+        .openOn(map);
     all_drawn_array.push(line_draw);
     printAllInArray(all_drawn_array);
 }
@@ -59,15 +63,26 @@ function printAllInArray(polylineArray) {
     }
 }
 //send coords in the format [latStart, lngStart], [latEnd, lngEnd], ...
-function getCoordData() {
-    return all_drawn_array;
-}
 
 function deleteCurrentMapCoordData() {
     all_drawn_array = []; //empty the array to reset the displayed information
+    saveRowGeoJson = {}; //empty the array
     printAllInArray(all_drawn_array); //clear out the print div in adminPanel
 }
 //getters
 function getCurrentPolyLineObj() {
     return polyline; //return the variable polyline
 }
+function getCoordData() {
+    var some = [];
+    var counter = 0;
+    for (var i in polyline) {
+        some[i] = polyline[i].toGeoJSON();
+        some[i].properties.row = ++counter;
+        some[i].properties.mapName = getCurrentMapName();
+    }
+    console.log(some);
+    return some;
+}
+
+

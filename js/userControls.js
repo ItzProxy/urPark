@@ -75,7 +75,6 @@ function plotLot() {
             data: "yes"
         })
         .done(function (msg) {
-            ;
             geoJsonFiles = JSON.stringify(msg);
             console.log(geoJsonFiles);
         });
@@ -219,3 +218,4 @@ function plotLot() {
         layers.appendChild(link);
     }
 }
+
