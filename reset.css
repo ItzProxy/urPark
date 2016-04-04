@@ -1,0 +1,20 @@
+
+article, blockquote, body, form,h1, h2, h3, h4, h5, h6, header, html, img, li, section, u, ul {
+	background: transparent;
+	border: 0 none;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: top;
+}
+
+ol, ul {
+	list-style: none;
+}
+* {
+	border:none
+}
+
+
